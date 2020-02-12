@@ -1,12 +1,22 @@
 class LongestRepeatedSubstring
 
 	def longest_repeated_substring(input)
-		test_var = (input.length/2).floor
-		start_pattern_1 = 0
-		
+		n = input.length
 
-		if input[start_pattern_1..(start_pattern_1 + test_var)] == input[test_var..input]
+		str_length_var = 2
 
-	end	
+		array_result = []
 
+		i = 0
+		j = str_length_var
+
+		while (j <= n - str_length_var)
+			if input[i, str_length_var] == input[j, str_length_var]
+				array_result << input[i, str_length_var]
+			end
+			j += 1
+		end
+
+		return array_result
+	end
 end
